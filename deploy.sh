@@ -4,7 +4,7 @@ set -e
 SERVER_HOME="$HOME/spring-roomescape-waiting"
 PID_FILE="$SERVER_HOME/app.pid"
 
-if [ ! -f ".env" ]; then
+if [ ! -f "$HOME/.env" ]; then
   echo ".env file required"
   exit
 fi
