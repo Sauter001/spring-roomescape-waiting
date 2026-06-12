@@ -4,6 +4,11 @@ set -e
 SERVER_HOME="$HOME/spring-roomescape-waiting"
 PID_FILE="$SERVER_HOME/app.pid"
 
+if [ ! -f ".env" ]; then
+  echo ".env file required"
+  exit
+fi
+
 if [ ! -d "$SERVER_HOME" ]; then
   echo "[git clone]"
   git clone https://github.com/Sauter001/spring-roomescape-waiting "$SERVER_HOME"
@@ -23,5 +28,6 @@ fi
 
 echo "[Rebooting...]"
 cd "$HOME" || exit
-nohup java -jar "$SERVER_HOME"/build/libs/spring-roomescape-waiting-0.0.1-SNAPSHOT.jar > output.log > /dev/null 2>&1 &
+mkdir -p ~/logs/
+nohup java -jar "$SERVER_HOME"/build/libs/spring-roomescape-waiting-0.0.1-SNAPSHOT.jar > ~/logs/output.log 2>&1 &
 echo $! > "$SERVER_HOME"/app.pid
