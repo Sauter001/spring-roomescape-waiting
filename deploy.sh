@@ -22,5 +22,5 @@ fi
 
 echo "[Rebooting...]"
 cd "$HOME" || exit
-nohup java -jar "$SERVER_HOME"/build/libs/spring-roomescape-waiting-0.0.1-SNAPSHOT.jar > output.log /dev/null 2>&1 &
+nohup java -jar "$SERVER_HOME"/build/libs/spring-roomescape-waiting-0.0.1-SNAPSHOT.jar > output.log > /dev/null 2>&1 &
 echo $! > "$SERVER_HOME"/app.pid
