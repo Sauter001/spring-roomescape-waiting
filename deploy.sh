@@ -11,6 +11,7 @@ fi
 cd "$SERVER_HOME" || exit
 git checkout sauter001
 git pull origin sauter001
+cp ./deploy.sh ~
 
 ./gradlew clean
 ./gradlew bootJar
