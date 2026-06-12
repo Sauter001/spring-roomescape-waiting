@@ -17,7 +17,7 @@ git pull origin sauter001
 
 echo "[Terminate running spring process]"
 if [ -f "$PID_FILE" ]; then
-  kill "$(cat "$PID_FILE")" 2>/dev/null || true
+  kill "$(cat "$PID_FILE")" || true
 fi
 
 echo "[Rebooting...]"
